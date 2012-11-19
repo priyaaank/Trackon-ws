@@ -1,7 +1,9 @@
 class Rating
   
+  include Mongoid::Document
+
   field :rating_value, :type => Integer
 
-  embedded_in :track
+  embedded_in :rateable, :polymorphic => true
 
 end

@@ -9,7 +9,10 @@ class Track
   
   has_many :presenters, :class_name => "User" 
   embeds_many :comments
-  embeds_many :ratings
-  embeds_many :votes
+  embeds_many :ratings, :as => :rateable
+  embeds_many :votes, :as => :voteable
+  embeds_many :tags, :as => :taggable
+
+  embedded_in :conference
 
 end
